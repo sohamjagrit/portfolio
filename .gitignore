@@ -1,0 +1,16 @@
+# Claude Code
+.claude/
+.claude-code/
+.claude.local.json
+
+# Node
+node_modules/
+.env
+.env.local
+
+# OS
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*~
