@@ -4,45 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soham Jagrit — Machine Learning Engineer</title>
-  <meta name="description" content="Machine Learning Engineer specializing in LLM systems, document processing, and AI evaluation frameworks.">
+  <meta name="description" content="Soham Jagrit — Machine Learning Engineer specializing in LLM systems, document processing, and AI evaluation frameworks.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cement: #9E9E9E;
-      --cement-dark: #757575;
-      --cement-light: #BDBDBD;
-      --accent: #00BCD4;
-      --accent-hover: #00ACC1;
-
-      --bg-light: #FFFFFF;
-      --bg-light-secondary: #F5F5F5;
-      --bg-dark: #1A1A1A;
-      --bg-dark-secondary: #2A2A2A;
-
-      --text-light: #212121;
-      --text-dark: #FFFFFF;
-      --text-muted-light: #616161;
-      --text-muted-dark: #BDBDBD;
+      --bg: #0D1117;
+      --bg-card: #161B22;
+      --bg-pill: #1C2128;
+      --border: #21262D;
+      --border-soft: #30363D;
+      --text-primary: #E6EDF3;
+      --text-muted: #8B949E;
+      --accent: #58C4DC;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
+      background: var(--bg);
+      color: var(--text-primary);
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark-mode {
-      background: var(--bg-dark);
-      color: var(--text-dark);
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -55,22 +43,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 48px;
-      border-bottom: 1px solid var(--cement-light);
-      background: var(--bg-light);
-      transition: all 0.3s;
-    }
-
-    body.dark-mode nav {
-      background: var(--bg-dark);
-      border-color: var(--cement-dark);
+      padding: 18px 48px;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(8px);
     }
 
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--cement-dark);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--accent);
       letter-spacing: -0.02em;
     }
 
@@ -81,81 +64,66 @@
     }
 
     .nav-links a {
-      color: var(--text-muted-light);
-      font-size: 14px;
-      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 13px;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    body.dark-mode .nav-links a {
-      color: var(--text-muted-dark);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      color: var(--cement-dark);
-      transition: transform 0.2s;
-    }
-
-    .theme-toggle:hover {
-      transform: scale(1.1);
-    }
+    .nav-links a:hover { color: var(--text-primary); }
 
     .nav-resume {
-      background: var(--accent);
-      color: var(--bg-light);
-      border: none;
-      padding: 10px 20px;
+      background: transparent;
+      border: 0.5px solid var(--accent);
+      color: var(--accent);
+      padding: 7px 18px;
       border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
       cursor: pointer;
+      font-family: 'Inter', sans-serif;
       transition: background 0.2s;
     }
 
-    .nav-resume:hover {
-      background: var(--accent-hover);
-    }
+    .nav-resume:hover { background: rgba(88, 196, 220, 0.08); }
 
-    /* ── Container ── */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 48px;
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 22px;
+      cursor: pointer;
     }
 
     /* ── Hero ── */
-    .hero {
-      padding: 120px 48px 80px;
-      max-width: 900px;
+    #about {
+      padding: 96px 48px 80px;
+      max-width: 800px;
     }
 
-    .hero h1 {
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(42px, 7vw, 64px);
-      font-weight: 700;
+      letter-spacing: 0.1em;
       margin-bottom: 16px;
-      letter-spacing: -0.02em;
+    }
+
+    #about h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
     }
 
     .hero-role {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(20px, 4vw, 28px);
-      font-weight: 500;
+      font-size: clamp(20px, 3.5vw, 30px);
+      font-weight: 400;
       color: var(--accent);
+      letter-spacing: -0.02em;
       margin-bottom: 24px;
       min-height: 1.3em;
     }
@@ -166,302 +134,263 @@
       height: 1em;
       background: var(--accent);
       margin-left: 2px;
+      vertical-align: middle;
       animation: blink 1s step-end infinite;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-    .hero p {
-      color: var(--text-muted-light);
-      font-size: 16px;
-      max-width: 620px;
+    #about p {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 580px;
       margin-bottom: 40px;
-      line-height: 1.8;
-    }
-
-    body.dark-mode .hero p {
-      color: var(--text-muted-dark);
+      line-height: 1.85;
     }
 
     .hero-cta {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: var(--bg-light);
+      color: var(--bg);
       border: none;
-      padding: 12px 32px;
+      padding: 11px 28px;
       border-radius: 6px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 1.5px solid var(--cement);
-      color: var(--cement-dark);
-      padding: 12px 32px;
-      border-radius: 6px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    body.dark-mode .btn-secondary {
-      color: var(--text-dark);
-      border-color: var(--cement-dark);
-    }
-
-    /* ── Section ── */
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 48px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--cement-dark);
-    }
-
-    body.dark-mode .section-title {
-      color: var(--cement-light);
-    }
-
-    /* ── Experience Timeline ── */
-    .timeline {
-      position: relative;
-      padding: 0;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--cement-light);
-    }
-
-    body.dark-mode .timeline::before {
-      background: var(--cement-dark);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 48px;
-      margin-bottom: 48px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 0;
-      width: 16px;
-      height: 16px;
-      background: var(--accent);
-      border-radius: 50%;
-      border: 3px solid var(--bg-light);
-    }
-
-    body.dark-mode .timeline-item::before {
-      border-color: var(--bg-dark);
-    }
-
-    .timeline-date {
-      font-size: 13px;
-      color: var(--text-muted-light);
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    body.dark-mode .timeline-date {
-      color: var(--text-muted-dark);
-    }
-
-    .timeline-company {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--cement-dark);
-      margin-bottom: 4px;
-    }
-
-    body.dark-mode .timeline-company {
-      color: var(--cement-light);
-    }
-
-    .timeline-role {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .timeline-bullets {
-      list-style: none;
       font-size: 14px;
-      color: var(--text-muted-light);
-      line-height: 1.8;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s;
     }
 
-    body.dark-mode .timeline-bullets {
-      color: var(--text-muted-dark);
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-ghost {
+      background: transparent;
+      border: 0.5px solid var(--border-soft);
+      color: var(--text-primary);
+      padding: 11px 28px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
     }
 
-    .timeline-bullets li {
-      margin-bottom: 8px;
-      padding-left: 16px;
-      position: relative;
+    .btn-ghost:hover { border-color: var(--text-muted); }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 0 48px;
     }
 
-    .timeline-bullets li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
+    /* ── Sections ── */
+    section {
+      padding: 64px 48px;
+    }
+
+    .section-label {
+      font-size: 11px;
       color: var(--accent);
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: var(--border);
     }
 
     /* ── Projects ── */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
     }
 
-    .project-card {
-      background: var(--bg-light-secondary);
-      border: 1.5px solid var(--cement-light);
-      border-radius: 12px;
-      padding: 32px;
-      transition: all 0.3s;
+    .card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 24px;
+      transition: border-left-color 0.25s, transform 0.2s;
     }
 
-    body.dark-mode .project-card {
-      background: var(--bg-dark-secondary);
-      border-color: var(--cement-dark);
+    .card:hover {
+      border-left-color: var(--text-primary);
+      transform: translateY(-2px);
     }
 
-    .project-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 188, 212, 0.15);
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
     }
 
-    body.dark-mode .project-card:hover {
-      box-shadow: 0 8px 24px rgba(0, 188, 212, 0.2);
-    }
-
-    .project-title {
+    .card-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--cement-dark);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
     }
 
-    body.dark-mode .project-title {
-      color: var(--cement-light);
+    .card-links {
+      display: flex;
+      gap: 12px;
     }
 
-    .project-desc {
-      font-size: 14px;
-      color: var(--text-muted-light);
-      margin-bottom: 16px;
-      line-height: 1.8;
+    .card-links a {
+      color: var(--text-muted);
+      font-size: 15px;
+      transition: color 0.2s;
     }
 
-    body.dark-mode .project-desc {
-      color: var(--text-muted-dark);
-    }
+    .card-links a:hover { color: var(--accent); }
 
-    .project-result {
-      color: var(--accent);
+    .card-desc {
+      color: var(--text-muted);
       font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 16px;
+      line-height: 1.75;
+      margin-bottom: 18px;
     }
 
-    .project-tags {
+    .card-result {
+      color: var(--accent);
+      font-size: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 14px;
+    }
+
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .tag {
-      background: var(--cement-light);
-      color: var(--bg-light);
-      font-size: 12px;
-      padding: 4px 12px;
+      background: var(--bg-pill);
+      border: 0.5px solid var(--border-soft);
+      color: var(--accent);
+      font-size: 11px;
+      padding: 3px 10px;
       border-radius: 20px;
-      font-weight: 500;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
-    body.dark-mode .tag {
-      background: var(--cement-dark);
-      color: var(--bg-dark);
+    /* ── Experience ── */
+    .exp-list { display: flex; flex-direction: column; gap: 40px; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 28px;
     }
+
+    .exp-period {
+      color: var(--text-muted);
+      font-size: 12px;
+      padding-top: 3px;
+      line-height: 1.5;
+    }
+
+    .exp-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .exp-bullets {
+      color: var(--text-muted);
+      font-size: 13px;
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+
+    .exp-bullets li { margin-bottom: 5px; }
 
     /* ── Skills ── */
-    .skills-row {
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+    }
+
+    .skill-group {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .skill-group-name {
+      font-size: 11px;
+      color: var(--accent);
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
+      gap: 7px;
     }
 
     .skill-pill {
-      background: var(--cement-light);
-      color: var(--bg-light);
-      font-size: 14px;
-      padding: 8px 18px;
-      border-radius: 24px;
-      font-weight: 500;
-    }
-
-    body.dark-mode .skill-pill {
-      background: var(--cement-dark);
-      color: var(--bg-dark);
+      background: var(--bg);
+      border: 0.5px solid var(--border-soft);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 4px 11px;
+      border-radius: 20px;
     }
 
     /* ── Contact ── */
-    .contact-section {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+    .contact-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 36px;
+      max-width: 520px;
     }
 
-    .contact-section p {
-      color: var(--text-muted-light);
+    .contact-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 28px;
       line-height: 1.8;
-      max-width: 600px;
-    }
-
-    body.dark-mode .contact-section p {
-      color: var(--text-muted-dark);
     }
 
     .contact-links {
@@ -471,188 +400,192 @@
     }
 
     .contact-link {
-      background: var(--cement-light);
-      color: var(--bg-light);
-      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      border: 0.5px solid var(--border-soft);
+      color: var(--text-primary);
+      padding: 10px 20px;
       border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.2s;
+      font-size: 13px;
+      transition: border-color 0.2s;
     }
 
-    body.dark-mode .contact-link {
-      background: var(--cement-dark);
-      color: var(--bg-dark);
-    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
 
-    .contact-link:hover {
-      background: var(--accent);
+    .contact-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
     }
 
     /* ── Footer ── */
     footer {
-      padding: 32px 48px;
-      border-top: 1px solid var(--cement-light);
-      text-align: left;
-      color: var(--text-muted-light);
-      font-size: 13px;
+      padding: 28px 48px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    body.dark-mode footer {
-      border-color: var(--cement-dark);
-      color: var(--text-muted-dark);
+    footer span {
+      color: var(--text-muted);
+      font-size: 12px;
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 768px) {
-      nav {
-        padding: 16px 24px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 80px 24px 60px;
-      }
-
-      .container {
-        padding: 0 24px;
-      }
-
-      section {
-        padding: 60px 24px;
-      }
-
-      .section-title {
-        font-size: 24px;
-      }
-
-      .timeline {
-        padding-left: 0;
-      }
-
-      .timeline::before {
-        display: none;
-      }
-
-      .timeline-item {
-        padding-left: 0;
-        margin-bottom: 32px;
-      }
-
-      .timeline-item::before {
-        display: none;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-row {
-        gap: 8px;
-      }
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; gap: 16px; position: absolute; top: 57px; left: 0; right: 0; background: var(--bg); padding: 24px; border-bottom: 0.5px solid var(--border); }
+      .hamburger { display: block; }
+      #about { padding: 64px 24px 56px; }
+      section { padding: 48px 24px; }
+      .divider { margin: 0 24px; }
+      footer { padding: 24px; }
+      .exp-item { grid-template-columns: 1fr; gap: 4px; }
+      .exp-period { font-size: 11px; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#" class="nav-logo">soham</a>
-    <ul class="nav-links">
-      <li><a href="#experience">experience</a></li>
+    <a href="#about" class="nav-logo">soham jagrit</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">about</a></li>
       <li><a href="#projects">projects</a></li>
+      <li><a href="#experience">experience</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle">🌙</button>
-      <button class="nav-resume" onclick="window.open('resume.pdf', 'resume', 'width=900,height=1200'); return false;">↓ resume</button>
-    </div>
+    <a href="resume.pdf" target="_blank" class="nav-resume">↓ resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section id="about">
+    <p class="eyebrow">hi, I'm</p>
     <h1>Soham Jagrit</h1>
-    <div class="hero-role"><span id="typed-role"></span><span class="cursor"></span></div>
+    <p class="hero-role"><span id="typed-role"></span><span class="cursor"></span></p>
     <p>I build scalable ML systems, GPU-accelerated inference pipelines, and evaluation frameworks. Incoming MS in Data Science from UT Arlington (May 2026). Based in the Bay Area.</p>
     <div class="hero-cta">
-      <a href="#contact"><button class="btn-primary">get in touch</button></a>
-      <a href="#projects"><button class="btn-secondary">view work</button></a>
+      <a href="#projects"><button class="btn-primary">view my work</button></a>
+      <a href="#contact"><button class="btn-ghost">get in touch</button></a>
     </div>
   </section>
+
+  <hr class="divider">
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="container">
-    <h2 class="section-title">experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">Jan 2026 — May 2026</div>
-        <div class="timeline-company">Delta Air Lines</div>
-        <div class="timeline-role">Graduate Data Science Intern</div>
-        <ul class="timeline-bullets">
-          <li>Built GPU-accelerated inference pipeline using Docling on AWS SageMaker, achieving 12x throughput improvement</li>
-          <li>Engineered conditional inference system with OCR toggle, reducing latency by routing non-scanned PDFs</li>
-          <li>Configured end-to-end SageMaker training pipelines with PyTorch, enabling distributed processing</li>
-          <li>Designed human-in-the-loop evaluation framework across coherence, factual accuracy metrics</li>
-        </ul>
+  <section id="experience">
+    <div class="section-label">experience</div>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-period">Jan 2026 — May 2026</div>
+        <div>
+          <div class="exp-role">Graduate Data Science Intern</div>
+          <div class="exp-company">Delta Air Lines</div>
+          <ul class="exp-bullets">
+            <li>Built GPU-accelerated inference pipeline using Docling on AWS SageMaker (ml.g5.xlarge), achieving 12x throughput improvement processing 2,000+ PDFs in 5 hours</li>
+            <li>Engineered conditional inference system with OCR toggle, reducing latency and preventing OOM errors via memory cleanup</li>
+            <li>Configured end-to-end SageMaker training pipelines with PyTorch, enabling batch-aware distributed processing</li>
+            <li>Designed human-in-the-loop evaluation framework across coherence, factual accuracy metrics to drive prompt optimization</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">Mar 2025 — Dec 2025</div>
-        <div class="timeline-company">University of Texas at Arlington</div>
-        <div class="timeline-role">Student Data Analyst</div>
-        <ul class="timeline-bullets">
-          <li>Built unified Power BI reporting system for UTA Admissions, saving 80+ hours per month</li>
-          <li>Delivered automated reporting on student engagement trends across all channels</li>
-        </ul>
+      <div class="exp-item">
+        <div class="exp-period">Mar 2025 — Dec 2025</div>
+        <div>
+          <div class="exp-role">Student Data Analyst</div>
+          <div class="exp-company">University of Texas at Arlington</div>
+          <ul class="exp-bullets">
+            <li>Built unified Power BI reporting system for UTA Admissions, migrating from manual Excel tracking to real-time dashboard</li>
+            <li>Delivered automated reporting on student engagement trends across calls, emails, and walk-ins channels</li>
+            <li>Saved 80+ hours of manual data management per month through dashboard automation</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">Jan 2024 — Jun 2024</div>
-        <div class="timeline-company">Softvan Pvt. Ltd.</div>
-        <div class="timeline-role">Data Science Intern</div>
-        <ul class="timeline-bullets">
-          <li>Built two-stage NLP pipeline on 50,000+ customer reviews, fine-tuned BERT for sentiment classification</li>
-          <li>Engineered full text preprocessing pipeline using NLTK, TF-IDF, and word embeddings</li>
-        </ul>
+      <div class="exp-item">
+        <div class="exp-period">Jan 2024 — Jun 2024</div>
+        <div>
+          <div class="exp-role">Data Science Intern</div>
+          <div class="exp-company">Softvan Pvt. Ltd.</div>
+          <ul class="exp-bullets">
+            <li>Built two-stage NLP pipeline on 50,000+ customer reviews, fine-tuned BERT for 3-class sentiment classification</li>
+            <li>Engineered full text preprocessing pipeline using NLTK, TF-IDF, and word embeddings</li>
+            <li>Imputed sentiment for customers using predicted polarities with demographic features</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">Jun 2023 — Sept 2023</div>
-        <div class="timeline-company">Travel Designer Group Pvt. Ltd.</div>
-        <div class="timeline-role">Data Engineering Intern</div>
-        <ul class="timeline-bullets">
-          <li>Configured ELK stack pipeline ingesting 1M+ search records from booking API</li>
-          <li>Designed Elasticsearch schema and built Kibana dashboards for geographic patterns</li>
-        </ul>
+      <div class="exp-item">
+        <div class="exp-period">Jun 2023 — Sept 2023</div>
+        <div>
+          <div class="exp-role">Data Engineering Intern</div>
+          <div class="exp-company">Travel Designer Group Pvt. Ltd.</div>
+          <ul class="exp-bullets">
+            <li>Configured ELK stack pipeline (Elasticsearch, Logstash, Kibana) ingesting 1M+ search records from booking API</li>
+            <li>Designed Elasticsearch index schema and built Kibana dashboards for geographic search patterns</li>
+            <li>Enabled real-time and historical insights into regional demand trends</li>
+          </ul>
+        </div>
       </div>
+
     </div>
   </section>
 
+  <hr class="divider">
+
   <!-- PROJECTS -->
-  <section id="projects" class="container">
-    <h2 class="section-title">projects</h2>
+  <section id="projects">
+    <div class="section-label">projects</div>
     <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-title">NutriBot</div>
-        <p class="project-desc">RAG-based nutrition Q&A chatbot using LLaMA (Groq API). Embedded 12,000+ text chunks into Pinecone vector storage.</p>
-        <p class="project-result">↗ Deployed on AWS EC2 with Docker and GitHub Actions</p>
-        <div class="project-tags">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-title">NutriBot</span>
+          <div class="card-links">
+            <a href="https://github.com/sohamjagrit/nutribot" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="card-desc">RAG-based nutrition Q&A chatbot using LLaMA (Groq API). Embedded 12,000+ text chunks from nutrition sources into Pinecone vector storage to deliver grounded answers.</p>
+        <p class="card-result">↗ Deployed on AWS EC2 with Docker containerization and GitHub Actions</p>
+        <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">Flask</span>
           <span class="tag">LangChain</span>
           <span class="tag">Pinecone</span>
           <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-title">Loan Defaulters Prediction</div>
-        <p class="project-desc">End-to-end MLOps pipeline for predicting loan defaulters with data ingestion, feature transformation, and model training.</p>
-        <p class="project-result">↗ 93% F1 score — Containerized with Docker and CI/CD</p>
-        <div class="project-tags">
+      <div class="card">
+        <div class="card-top">
+          <span class="card-title">Loan Defaulters Prediction</span>
+          <div class="card-links">
+            <a href="https://github.com/sohamjagrit/loan-prediction" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="card-desc">End-to-end MLOps pipeline for predicting loan defaulters. Covers data ingestion, feature transformation, model training, and real-time prediction using Random Forest.</p>
+        <p class="card-result">↗ 93% F1 score — Containerized with Docker and CI/CD, deployed on AWS EC2</p>
+        <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">Flask</span>
           <span class="tag">Scikit-learn</span>
@@ -661,11 +594,18 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-title">Electric Demand Forecasting</div>
-        <p class="project-desc">Time series forecasting for electricity demand using VAR, SARIMAX, and XGBoost on multivariate data.</p>
-        <p class="project-result">↗ MAPE of 5.71% — Predictive modeling on nonlinear trends</p>
-        <div class="project-tags">
+<div class="card">
+        <div class="card-top">
+          <span class="card-title">Electric Demand Forecasting</span>
+          <div class="card-links">
+            <a href="https://github.com/sohamjagrit" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="card-desc">Time series forecasting for electricity demand using VAR, SARIMAX, and XGBoost on multivariate data combining consumption and weather patterns.</p>
+        <p class="card-result">↗ MAPE of 5.71% — Demonstrated predictive modeling on nonlinear trends</p>
+        <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">XGBoost</span>
           <span class="tag">TensorFlow</span>
@@ -673,52 +613,109 @@
           <span class="tag">Time Series</span>
         </div>
       </div>
+
     </div>
   </section>
+
+  <hr class="divider">
 
   <!-- SKILLS -->
-  <section id="skills" class="container">
-    <h2 class="section-title">skills</h2>
-    <div class="skills-row">
-      <span class="skill-pill">Python</span>
-      <span class="skill-pill">SQL</span>
-      <span class="skill-pill">C++</span>
-      <span class="skill-pill">R</span>
-      <span class="skill-pill">PyTorch</span>
-      <span class="skill-pill">TensorFlow</span>
-      <span class="skill-pill">Scikit-learn</span>
-      <span class="skill-pill">XGBoost</span>
-      <span class="skill-pill">LangChain</span>
-      <span class="skill-pill">AWS SageMaker</span>
-      <span class="skill-pill">Docling</span>
-      <span class="skill-pill">Pinecone</span>
-      <span class="skill-pill">Docker</span>
-      <span class="skill-pill">Power BI</span>
-      <span class="skill-pill">Tableau</span>
+  <section id="skills">
+    <div class="section-label">skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-name">languages</div>
+        <div class="skill-list">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">R</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">ML frameworks</div>
+        <div class="skill-list">
+          <span class="skill-pill">PyTorch</span>
+          <span class="skill-pill">TensorFlow</span>
+          <span class="skill-pill">Scikit-learn</span>
+          <span class="skill-pill">XGBoost</span>
+          <span class="skill-pill">LangChain</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">data science</div>
+        <div class="skill-list">
+          <span class="skill-pill">Model Training</span>
+          <span class="skill-pill">Model Evaluation</span>
+          <span class="skill-pill">Context Engineering</span>
+          <span class="skill-pill">LLM Fine Tuning</span>
+          <span class="skill-pill">Hypothesis Testing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">cloud & infra</div>
+        <div class="skill-list">
+          <span class="skill-pill">AWS SageMaker</span>
+          <span class="skill-pill">AWS S3</span>
+          <span class="skill-pill">AWS Lambda</span>
+          <span class="skill-pill">AWS EC2</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Git</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">tools & libraries</div>
+        <div class="skill-list">
+          <span class="skill-pill">Docling</span>
+          <span class="skill-pill">Pinecone</span>
+          <span class="skill-pill">ELK Stack</span>
+          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">NumPy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">visualization</div>
+        <div class="skill-list">
+          <span class="skill-pill">Power BI</span>
+          <span class="skill-pill">Tableau</span>
+          <span class="skill-pill">Kibana</span>
+          <span class="skill-pill">Matplotlib</span>
+        </div>
+      </div>
     </div>
   </section>
 
+  <hr class="divider">
+
   <!-- CONTACT -->
-  <section id="contact" class="container">
-    <h2 class="section-title">contact</h2>
-    <div class="contact-section">
-      <p>Open to full-time roles in machine learning engineering, data science, and LLM systems. Based in the Bay Area, open to remote opportunities.</p>
+  <section id="contact">
+    <div class="section-label">contact</div>
+    <div class="contact-card">
+      <h3>let's work together</h3>
+      <p>Open to full-time roles in data science, machine learning engineering, and LLM systems. Based in the Bay Area. Open to remote opportunities.</p>
       <div class="contact-links">
-        <a href="mailto:sohamjagrit@gmail.com" class="contact-link">Email</a>
-        <a href="https://linkedin.com/in/sohamjagrit" target="_blank" class="contact-link">LinkedIn</a>
-        <a href="https://github.com/sohamjagrit" target="_blank" class="contact-link">GitHub</a>
+        <a href="mailto:sohamjagrit@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          email me
+        </a>
+        <a href="https://linkedin.com/in/sohamjagrit" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/sohamjagrit" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <span>designed & built by soham jagrit · © 2026</span>
-    </div>
+    <span>designed & built by soham jagrit</span>
+    <span>© 2026</span>
   </footer>
 
   <script>
-    // Typed role animation
     const roles = ['Machine Learning Engineer', 'LLM Systems Builder', 'Data Scientist'];
     let ri = 0, ci = 0, deleting = false;
     const el = document.getElementById('typed-role');
@@ -738,19 +735,14 @@
     }
     setTimeout(tick, 1000);
 
-    // Dark mode toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      themeToggle.textContent = '☀️';
-    }
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
 
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('open');
+      });
     });
   </script>
 
